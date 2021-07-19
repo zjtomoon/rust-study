@@ -22,5 +22,7 @@
 >
 > 开发环境：
 >
-> 上海住处 ubuntu14 + emacs/vscodium、家里主机：wsl + suse linux 12 + neovim
+> 上海住处 ubuntu14 + emacs/vscodium、家里主机：wsl + suse linux 12 + emacs
+
+
 
