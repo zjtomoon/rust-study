@@ -20,5 +20,7 @@
 
 > rust版本：1.34.2
 >
-> 开发环境：上海住处 ubuntu14、家里主机：wsl + suse linux 12 
+> 开发环境：
+>
+> 上海住处 ubuntu14 + emacs/vscodium、家里主机：wsl + suse linux 12 + neovim
 
