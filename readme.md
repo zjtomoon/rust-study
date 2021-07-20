@@ -2,7 +2,7 @@
 
 # 线上学习资源
 
-+ 1、[rust programming language]([The Rust Programming Language - The Rust Programming Language (rust-lang.org)](https://doc.rust-lang.org/book/title-page.html))
++ 1、[rust-doc离线版](git@github.com:zjtomoon/rust-doc.git)
 
 
 
