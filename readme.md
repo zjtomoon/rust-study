@@ -6,7 +6,7 @@
 
 
 
-+ 2、[菜鸟教程]([Rust 教程 | 菜鸟教程 (runoob.com)](https://www.runoob.com/rust/rust-tutorial.html))
++ 2、[Rust 教程 | 菜鸟教程 (runoob.com)](https://www.runoob.com/rust/rust-tutorial.html)
 
   
 
@@ -22,7 +22,9 @@
 >
 > 开发环境：
 >
-> 上海住处 ubuntu14 + emacs、家里主机：wsl + suse linux 12 + emacs
+> 上海住处 ubuntu14 + emacs、
+>
+> 家里主机：centos7 + code-server 3.8.0 + 浏览器
 
 
 
@@ -47,3 +49,4 @@
 + 使用rust重写sqlite
 + windows 兼容 在windows 8编译 在windows xp 和 windows 8测试
 + 对上述的两个项目进行分离，单独建立github仓库并发布编译版本
+
