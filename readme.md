@@ -45,8 +45,8 @@
 在使用c++读透redis、sqlite源码的基础上使用rust重写
 
 + 使用rust重写redis
-+ 实现windows 兼容：在windows 8编译 在windows xp 和 windows 8测试
++ 实现windows 兼容：在windows 7编译 在windows xp 和 windows 7测试
 + 使用rust重写sqlite
-+ 实现windows 兼容：在windows 8编译 在windows xp 和 windows 8测试
++ 实现windows 兼容：在windows 7编译 在windows xp 和 windows 7测试
 + 对上述的两个项目进行分离，单独建立github仓库并发布编译版本
 
