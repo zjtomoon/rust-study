@@ -18,6 +18,18 @@
 
 
 
++ 5、[Chaos · 语雀 (yuque.com)](https://www.yuque.com/chaosbot)
+
+
+
++ 6、[介绍 - Rust精选 (rustmagazine.github.io)](https://rustmagazine.github.io/rust_magazine_2021/)
+
+
+
++ 7、[Rust语言中文社区-首页 (rustcc.cn)](https://rustcc.cn/)
+
+
+
 # 学习笔记
 
 
