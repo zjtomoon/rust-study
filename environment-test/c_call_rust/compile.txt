@@ -1,0 +1,1 @@
+gcc -o call_rust call_rust.c libfoo.a -lpthread -ldl (only succeed on Linux)
