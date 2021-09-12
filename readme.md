@@ -34,16 +34,6 @@
 
 
 
-> rust版本：1.34.2
->
-> 开发环境：
->
-> 上海住处 ubuntu14 + emacs、
->
-> 家里主机：centos7 + code-server 3.8.0 + 浏览器
-
-
-
 ## 入门
 
 + 1、[rust-doc离线版](git@github.com:zjtomoon/rust-doc.git)
