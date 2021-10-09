@@ -2,5 +2,6 @@ debug/
 target/
 .vscode/
 .idea/
+.metadata/
 *.exe
 Cargo.lock
