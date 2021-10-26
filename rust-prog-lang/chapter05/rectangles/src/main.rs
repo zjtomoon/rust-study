@@ -33,15 +33,30 @@ struct Rectangle {
     height: u32,
 }
 
+impl Rectangle {
+   /*  fn square(size: u32) -> Rectangle {
+        Rectangle { width: size,height: size }
+    } */
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
+impl Rectangle {
+    fn can_hold(&self,other:Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+}
+
 fn main() {
     let rect1 = Rectangle {width:30,height:50};
 
     println!(
         "The area of the rectangle is {} square pixels.",
-        area(rect1)
-    )
+        Rectangle::area(&rect1)
+    );
 }
 
-fn area(rectangle: Rectangle) ->u32 {
+/* fn area(rectangle: Rectangle) ->u32 {
     rectangle.width * rectangle.height
-}
+} */
