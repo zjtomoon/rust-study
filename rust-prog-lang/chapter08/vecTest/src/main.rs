@@ -14,4 +14,12 @@ fn main() {
     for i in &v1 {
         println!("{}",i);
     }
+
+    println!("==========");
+
+    let mut v2 = vec![100,32,57];
+    for j in &mut v2 {
+        *j += 50;
+        println!("{}",j)
+    }
 }
