@@ -12,7 +12,7 @@ fn main() {
     //let (query,filename) = parse_config(&args);
     //let config = Config::new(&args);
     let config = Config::new(&args).unwrap_or_else(|err| {
-       println!("Problem parsing arguments: {}",err);
+        println!("Problem parsing arguments: {}",err);
         process::exit(1);
     });
     //let query = &args[1];
@@ -30,7 +30,7 @@ fn main() {
     // let contents = fs::read_to_string(config.filename).expect("Something went wrong reading the file");
     //
     // println!("With text:\n {}",contents);
-   // run(config);
+    // run(config);
 
 }
 
