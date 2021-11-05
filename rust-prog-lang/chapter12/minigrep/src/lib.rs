@@ -8,12 +8,27 @@ pub struct Config {
     pub case_sensitive: bool,
 }
 impl Config {
-    pub fn new(args: &[String]) -> Result<Config,&'static str>{
-        if args.len() < 3 {
+    //pub fn new(args: &[String]) -> Result<Config,&'static str>{
+    pub fn new(mut args: std::env::Args) -> Result<Config,&'static str> {
+        /*if args.len() < 3 {
             return Err("not enough arguments");
         }
         let query = args[1].clone();
-        let filename = args[2].clone();
+        let filename = args[2].clone();*/
+        //使用Iterator trait方法来代替索引
+        args.next();
+        /*
+            env::args的返回值的第一个值是程序本身的名称。为了忽略它，必须先调用一次next并忽略返回值。
+         */
+
+        let query = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a query string"),
+        };
+        let filename = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a file name"),
+        };
         let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
 
         Ok(Config {
@@ -93,7 +108,7 @@ Trust me.";
 }
 
 pub fn search<'a>(query: &str,contents: &'a str) -> Vec<&'a str> {
-    let mut results = Vec::new();
+/*    let mut results = Vec::new();
 
     for line in contents.lines() {
         if line.contains(query) {
@@ -101,7 +116,10 @@ pub fn search<'a>(query: &str,contents: &'a str) -> Vec<&'a str> {
         }
     }
 
-    results
+    results*/
+    contents.lines()
+        .filter(|line| line.contains(query))
+        .collect()
 }
 
 pub fn search_case_insensitive<'a>(query: &str,contents: &'a str) -> Vec<&'a str> {
