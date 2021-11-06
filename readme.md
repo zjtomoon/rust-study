@@ -30,6 +30,10 @@
 
 
 
++ 8、[Rust in Action (manning.com)](https://www.manning.com/books/rust-in-action)
+
+
+
 # 学习笔记
 
 
@@ -44,7 +48,7 @@
 
   
 
-+ 3、[原子之音的个人空间_哔哩哔哩_Bilibili](https://space.bilibili.com/437860379?from=search&seid=13127131681258617937)
++ ~~3、[原子之音的个人空间_哔哩哔哩_Bilibili](https://space.bilibili.com/437860379?from=search&seid=13127131681258617937)~~
 
 ## 进阶
 
