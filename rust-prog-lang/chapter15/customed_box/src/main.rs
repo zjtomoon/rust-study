@@ -17,6 +17,10 @@ impl<T> Deref for MyBox<T> {
     }
 }
 
+fn hello(name: &str) {
+    println!("Hello,{}",name);
+}
+
 //自定义智能指针
 fn main() {
     let x = 5;
@@ -24,4 +28,7 @@ fn main() {
 
     assert_eq!(5,x);
     assert_eq!(5,*y);
+
+    let m = MyBox::new(String::from("Rust"));
+    hello(&m);
 }
