@@ -1,17 +1,17 @@
-pub trait Messager {
+pub trait Messenger {
     fn send(&self,msg: &str);
 }
 
-pub struct LimitTracker<'a, T: 'a + Messager> {
-    messager: &'a T,
+pub struct LimitTracker<'a, T: 'a + Messenger> {
+    messenger: &'a T,
     value: usize,
     max: usize,
 }
 
-impl<'a, T> LimitTracker<'a, T> where T: Messager {
-    pub fn new(message: &T,max: usize) -> LimitTracker<T> {
+impl<'a, T> LimitTracker<'a, T> where T: Messenger {
+    pub fn new(messenger: &T,max: usize) -> LimitTracker<T> {
         LimitTracker {
-            messager,
+            messenger,
             value: 0,
             max,
         }
@@ -23,11 +23,11 @@ impl<'a, T> LimitTracker<'a, T> where T: Messager {
         let percentage_of_max = self.value as f64 / self.max as f64;
 
         if percentage_of_max >= 1.0 {
-            self.messager.send("Error: You are over your quota!");
+            self.messenger.send("Error: You are over your quota!");
         } else if percentage_of_max >= 0.9 {
-            self.messager.send("Urgent warning: You've used up over 90% of your quota!");
+            self.messenger.send("Urgent warning: You've used up over 90% of your quota!");
         } else if percentage_of_max >= 0.75 {
-            self.messager.send("Warning: You've used up over 75% of your quota!");
+            self.messenger.send("Warning: You've used up over 75% of your quota!");
         }
     }
 }
@@ -36,30 +36,40 @@ impl<'a, T> LimitTracker<'a, T> where T: Messager {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use std::cell::RefCell;
 
-    struct MockMessager {
-        sent_messages: Vec<String>,
+    struct MockMessenger {
+        //sent_messages: Vec<String>,
+        sent_messengers: RefCell<Vec<String>>
     }
-    impl MockMessager {
-        fn new() -> MockMessager {
-            MockMessager {
-                sent_messages: vec![]
+    impl MockMessenger {
+        fn new() -> MockMessenger {
+            MockMessenger {
+                //sent_messages: vec![]
+                sent_messengers: RefCell::new(vec![])
             }
         }
     }
-    impl Messager for MockMessager {
-        fn send(&self,message: &str) {
-            self.sent_messages.push(String::from(message));
+    impl Messenger for MockMessenger {
+        fn send(&self,messenger: &str) {
+            //self.sent_messages.push(String::from(message));
+            self.sent_messengers.borrow_mut().push(String::from(messenger));
+            /*let mut one_borrow = self.sent_messengers.borrow_mut();
+            let mut two_borrow = self.sent_messengers.borrow_mut();
+
+            one_borrow.push(String::from(messenger));
+            two_borrow.push(String::from(messenger));*/
         }
     }
 
-    #[tests]
+    #[test]
     fn it_send_an_over_75_percent_warning_message() {
-        let mock_messager = MockMessager::new();
-        let mut limit_tracker = LimitTracker::new(&mock_messager,100);
+        let mock_messenger = MockMessenger::new();
+        let mut limit_tracker = LimitTracker::new(&mock_messenger,100);
 
         limit_tracker.set_value(80);
 
-        assert_eq!(mock_messager.sent_messages.len(),1);
+        //assert_eq!(mock_messager.sent_messages.len(),1);
+        assert_eq!(mock_messenger.sent_messengers.borrow().len(),1);
     }
 }
