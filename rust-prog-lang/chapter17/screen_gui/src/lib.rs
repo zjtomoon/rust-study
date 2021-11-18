@@ -31,3 +31,15 @@ impl<T> Screen<T> where T:Draw {
         }
     }
 }
+
+pub struct Button {
+    pub width: u32,
+    pub height: u32,
+    pub label: String,
+}
+
+impl Draw for Button {
+    fn draw(&self) {
+        //实际控制一个按钮的代码
+    }
+}
