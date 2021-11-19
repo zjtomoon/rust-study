@@ -21,6 +21,9 @@ fn main() {
 /*        thread::spawn(|| {
             handle_connection(stream);
         });*/
+        pool.execute(|| {
+            handle_connection(stream);
+        })
     }
 }
 
