@@ -4,8 +4,8 @@ fn main() {
 
     let s = Some(String::from("Hello"));
 
-    //if let Some(_s)  = s { //错误，因为s的值仍然会绑定值，它可能会获取值的所有权
-    if let Some(_) = s {
+    //if let Some(_s)  = s { //错误，因为s的值仍然会移动进_s，并阻止我们再次使用s
+    if let Some(_) = s { //能够无错编译，因为s没有被移动进_
         
         println!("found a string");
     }
