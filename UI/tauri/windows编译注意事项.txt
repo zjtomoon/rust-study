@@ -1,0 +1,2 @@
+选择rust-msvc版本 visual-studio安装2019及以上，vs2017编译后无法运行
+选择rust-gnu版本，仅能够执行tauri dev命令，tauri编译后缺少webview2loader.dll无法运行
