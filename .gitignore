@@ -6,3 +6,4 @@ rust_in_action/code/
 .metadata/
 *.exe
 Cargo.lock
+package-lock.json
