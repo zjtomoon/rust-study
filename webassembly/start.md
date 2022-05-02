@@ -50,3 +50,5 @@
 ```bash
     npm run build
 ```
+
+[参考文档](https://rustwasm.github.io/docs/book/introduction.html)
