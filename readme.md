@@ -18,6 +18,8 @@
 
 + 8、[Rust in Action (manning.com)](https://www.manning.com/books/rust-in-action)
 
++ 9、[rust语言圣经](https://course.rs/about-book.html)
+
 ## 第三方包网站
 
 [crates.io: Rust Package Registry](https://crates.io/)
