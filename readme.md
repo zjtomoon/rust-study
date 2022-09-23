@@ -40,3 +40,26 @@
 
 + 使用rust重写redis
 + 使用rust重写sqlite
+
+## 环境
+
+### windows平台
+
++ stable-msvc
+  
+  + 安装visual studio 2017以上版本
+
++ stable-gnu
+  
+  + 安装mysy2 版gcc
+  + [MSYS2](https://www.msys2.org/)
+
+## 开源项目学习
+
++ [RustPython/RustPython: A Python Interpreter written in Rust (github.com)](https://github.com/RustPython/RustPython)
+
++ [tauri](https://tauri.app)
+
++ [Compiling from Rust to WebAssembly - WebAssembly | MDN (mozilla.org)](https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm)
+
+
