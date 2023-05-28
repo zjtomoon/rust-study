@@ -1,7 +1,9 @@
-use tonic::{transport::Server,Request,Response,Status};
+use tonic::{transport::Server, Request, Response, Status};
 
 use hello_world::greeter_server::{Greeter, GreeterServer};
 use hello_world::{HelloReply, HelloRequest};
+
+use tokio::runtime::Runtime;
 
 pub mod hello_world {
     tonic::include_proto!("helloworld");
@@ -19,22 +21,21 @@ impl Greeter for MyGreeter {
         println!("Got a request: {:?}", request);
 
         let reply = hello_world::HelloReply {
-            message: format!("Hello {}!", request.into_inner().name).into(),
+            message: format!("Hello {}!", request.into_inner().name),
         };
 
         Ok(Response::new(reply))
     }
 }
 
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let addr = "[::1]:50051".parse()?;
+fn main() {
+    let addr = "[::1]:50051".parse().unwrap();
     let greeter = MyGreeter::default();
 
-    Server::builder()
+    let rt = Runtime::new().expect("failed to obtain a new RunTime object");
+    let server_future = Server::builder()
         .add_service(GreeterServer::new(greeter))
-        .serve(addr)
-        .await?;
-
-    Ok(())
+        .serve(addr);
+    rt.block_on(server_future)
+        .expect("failed to successfully run the future on RunTime");
 }
